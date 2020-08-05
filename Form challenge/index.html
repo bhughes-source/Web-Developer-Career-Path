@@ -1,0 +1,77 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Tab title -->
+    <title>Exotic Peppers</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <h1>Welcome to the Pepper Exchange!</h1>
+    <hr>
+    <!-- Form for finding the pepper -->
+    <form action="order.html" method="POST">
+      <h2>Use the form below to find the right pepper for you!</h2>
+      <!-- Dropdown List-->
+      <section class="looks">
+        <label for="color">What appearence do you prefer in a pepper?</label>
+        <select id="color" name="color">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+          <option value="orange">Orange</option>
+          <option valuie="brown">Brown</option>
+        </select>
+        </section>
+        <hr>
+        <!-- Range selection for level of heat -->
+        <section class="spicy">
+          <br>
+          <span>Weak sauce</span>
+          <input id="heat" name="heat" type="range" min="100" max="15000" step="100">
+          <span>NUCLEAR!!</span>
+        </section>
+        <br>
+        <!-- Radio button agreement -->
+        <section class="agreement">
+          <span>Are you sure that is the correct heat level for you?</span>
+          <br>
+          <br>
+          <input type="radio" name="agree" id="yes" value="yes">
+          <label for="yes">Yes</label>
+          <input type="radio" name="agree" id="no" value="no">
+          <label for="no">No</label>
+        </section>
+        <br>
+        <!-- Quantity selection -->
+        <section class="amount">
+          <label for="number">How many peppers do you want?</label>
+          <input id="number" type="number" name="number"
+        </section>
+        <br>
+        <br>
+        <!-- Feedback section with data list -->
+        <section class="feedback">
+          <label for="social">How did you hear about us?</label>
+          <input list="socials" id="social" name="social">
+          <datalist id="socials">
+            <option value="Facebook"></option>
+            <option value="Myspace"></option>
+            <option value="Email"></option>
+            <option value="Friend"></option>
+            <option value="Workplace"></option>
+            <option value="Grinder"></option>
+            <option value="Tinder"></option>
+            <option value="Minecraft"></option>
+          </datalist>
+        </section>
+        <br>
+        <br>
+        <!-- Email collection -->
+        <section class="spam">
+          <label for="email">Want more exciting information about peppers? Leave your email below!.</label>
+          <input type="text" name="email" id="email" placeholder="SpamMaybe@gmail.com">
+        </section>
+      </form>
+  </body>
+</html>
