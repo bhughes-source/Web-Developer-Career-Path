@@ -44,10 +44,9 @@ header {
     text-align: center;
     background-image: url(./resources/stick.jpg);
     background-size: cover;
-    border-radius: 5px;
     
 }
-
+/* Colors class not same width as fonts or styles class????? I dont know why it will not match*/
 .colors {
     width: 75%;
     border: 1px solid black;
@@ -75,4 +74,36 @@ main {
 html {
     background-color: white;
     background-size: cover;
+}
+.font1 {
+    font-family: "Alata";
+}
+.font2 {
+    font-family: "Slabo";
+}
+.font3 {
+    font-family: "Source Code Pro";
+}
+.fonts {
+    font-size: 26px;
+    border: 1px solid black;
+    text-align: center;
+    width: 75%;
+    display: inline-block;
+    margin: auto;
+    border-radius: 5px;
+}
+.styles {
+    border: 1px solid black;
+    width: 75%;
+    text-align: center;
+    display: inline-block;
+}
+body {
+    margin: auto;
+
+}
+/*Makes bullet points center */
+li {
+    list-style-position: inside;
 }
