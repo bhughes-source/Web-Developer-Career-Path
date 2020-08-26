@@ -16,34 +16,63 @@ p {
 }
 
 .green {
-    color: #5fc96b;
+    background-color: #5fc96b;
+    height: 100px;
+    width: 300px;
 }
 .blue {
-    color: #32a0db;
+    background-color: #32a0db;
+    height: 100px;
+    width: 300px;
 }
 .grey {
-    color: rgba(170, 170, 170, 0.842);
+    background-color: rgba(170, 170, 170, 0.842);
+    height: 100px;
+    width: 300px;
 }
 header {
-    margin: auto;
     font-size: 46px;
     width: 100%;
     position: fixed;
     box-sizing: border-box;
     z-index: 10;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 10px;
     text-transform: uppercase;
     clear: both;
     max-height: 300px;
-
-    
+    text-align: center;
+    background-image: url(./resources/stick.jpg);
+    background-size: cover;
+    border-radius: 5px;
     
 }
 
 .colors {
-    max-height: 300px;
-    width: auto;
+    width: 75%;
     border: 1px solid black;
-    clear: left;
+    clear: both;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    min-height: 200px;
+    text-align: center;
+    margin: auto;
+
+}
+.colorBox {
+    padding: 2px;
+    text-align: center;
+    border-radius: 10px;
+    display: inline-block;
+}
+main {
+    position: relative;
+    top: 100px;
+    margin: 0 10%;
+}
+html {
+    background-color: white;
+    background-size: cover;
 }
