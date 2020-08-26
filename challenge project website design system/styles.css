@@ -14,3 +14,36 @@ p {
     font-size: 18px;
     font-weight: 400;
 }
+
+.green {
+    color: #5fc96b;
+}
+.blue {
+    color: #32a0db;
+}
+.grey {
+    color: rgba(170, 170, 170, 0.842);
+}
+header {
+    margin: auto;
+    font-size: 46px;
+    width: 100%;
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 10;
+    border: 1px solid black;
+    padding: 10px;
+    text-transform: uppercase;
+    clear: both;
+    max-height: 300px;
+
+    
+    
+}
+
+.colors {
+    max-height: 300px;
+    width: auto;
+    border: 1px solid black;
+    clear: left;
+}
