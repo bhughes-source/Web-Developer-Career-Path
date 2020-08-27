@@ -1,0 +1,79 @@
+html {
+    font-size: 16px;
+    font-family: "Source Code Pro";
+    background-image: url(./resources/banner2.jpg);
+
+}
+.nav {
+    
+    display: block;
+    list-style: none;
+    height: 5em;
+    margin: auto;
+    background-color: rgba(70, 130, 180, .75);
+    position: static;
+    text-align: center;
+}
+.nav li {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    padding: 2em 1em;
+    color: black;
+    }
+.banner {
+    font-family: "Source Code Pro";
+    font-weight: bold;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    text-align: center;
+    position: static;
+    width: 100%;
+   /* background-image: url(./resources/banner2.jpg); */
+    background-position: center;
+    background-size: cover;
+    color: rgb(97, 96, 96);
+    
+}
+h2 {
+    font-size: 2rem;
+}
+/*.intro img {
+    min-height: 10rem;
+    min-width: 10rem;
+    max-width: 30rem;
+    max-height: 30rem;
+    float: right;
+    margin: auto;
+}
+.facilities img {
+    min-height: 10rem;
+    min-width: 10rem;
+    max-width: 30rem;
+    max-height: 30rem;
+    float: right;
+    margin: auto;
+} */
+img {
+    min-height: 7rem;
+    min-width: 7rem;
+    max-width: 30rem;
+    max-height: 30rem;
+    float: none;
+    margin: auto;
+    
+} 
+ h2 {
+     background: rgba(70, 130, 180, .75);
+     text-transform: capitalize;
+ }
+ @media only screen (max-width: 432px) {
+     img {
+         width: 50%;
+         height: 50%;
+     }
+     .banner {
+         letter-spacing: .25rem;
+     }
+ }
