@@ -3,7 +3,7 @@ This includes the projects I have worked on during my web developer career path 
 
 
 
-Currently working on --Club Site Challenge project
+Currently working on --9-1-2020 flex box challenge
 
 
 
