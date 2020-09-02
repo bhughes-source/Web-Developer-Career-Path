@@ -1,7 +1,11 @@
 html {
     font-size: 16px;
+    color: white;
 }
-
+body {
+    background-image: url(./resources/back2.jfif);
+    background-size: cover;
+}
 /* Makes banner flex box parent and centers text*/
 .banner {
     background-image: url(./resources/background1.jpg);
@@ -41,7 +45,6 @@ html {
     flex: auto;
     justify-content: space-around;
     align-items: center;
-    background-color: grey;
     
 }
 .ex {
@@ -77,5 +80,5 @@ html {
 p {
     font-family: "Open Sans";
     font-size: 1rem;
-    
+
 }
