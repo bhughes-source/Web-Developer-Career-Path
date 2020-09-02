@@ -1,0 +1,81 @@
+html {
+    font-size: 16px;
+}
+
+/* Makes banner flex box parent and centers text*/
+.banner {
+    background-image: url(./resources/background1.jpg);
+    background-size: cover;
+    color: white;
+    min-height: 150px;
+    width: 100%;
+    display: flex;
+    flex: auto;
+    padding: 1% 0;
+    justify-content: center;
+    align-items: center;
+    overflow: none;
+}
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    
+
+}
+.navBar p,a {
+     font-family: "Orbitron";
+     font-weight: bold;
+     text-transform: uppercase;
+     font-size: 2rem;
+     font-style: normal;
+     color: black;
+     text-decoration: none;
+     
+}
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    justify-content: space-around;
+    align-items: center;
+    background-color: grey;
+    
+}
+.ex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ex img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    padding: 10px;
+    height: auto;
+}
+.team {
+    font-family: "Open Sans";
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+}
+.team img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    padding: 10px;
+    height: auto;
+}
+p {
+    font-family: "Open Sans";
+    font-size: 1rem;
+    
+}
