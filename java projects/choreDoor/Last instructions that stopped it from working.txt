@@ -1,0 +1,85 @@
+Let's Make This ACT Like a Game! - Part III (Building a Loser)
+58.
+You need to check if a door has the game-ending ChoreBot.
+
+Above the isClicked() function, create a new function called isBot() that takes door as its argument. Just like the isClicked() function, isBot() will return a boolean value. Within this new function, write an if/else statement to check if the door.src value is equivalent to the botDoorPath. If they share the same value, that means that particular door has the ChoreBot and should return true. Otherwise, the isBot() function should return false.
+
+
+Stuck? Get a hint
+59.
+You’ve written a function to determine if a door‘s src contains the game-ending ChoreBot image. Now you must apply this logic into currently existing JavaScript functions.
+
+The playDoor() function now needs a door argument. After the if statement in this function, add an else if condition that checks if the isBot() will equate to true if you pass the door as the isBot() argument.
+
+Open the hint to see the proper syntax for this step.
+
+
+Stuck? Get a hint
+60.
+If this isBot() function equates to true, call the gameOver() function with no argument.
+
+61.
+Since the playDoor() function now needs an argument, look at the door element .onclick() functions. Pass doorImage1, doorImage2, and doorImage3, respectively, as the arguments for the playDoor() function within each .onclick() function.
+
+
+Stuck? Get a hint
+62.
+Now reexamine the gameOver() function. Beneath the current logic, write an else statement that will change the .innerHTML of the startButton variable to Game over! Play again?.
+
+Refresh the page and notice how the text changes to ‘Game Over! Play again?’ if you find the ChoreBot behind the first door or second door that you open.
+
+
+Stuck? Get a hint
+63.
+There’s a problem with the current gaming logic. Notice that even if you find the ChoreBot behind the first door or second door that you open, you can still open the remaining doors and override a loss to victory (See what happens to the startButton text once all the doors are open). Adding more logic will fix this game logic flaw.
+
+Add a new global variable named currentlyPlaying and set its value to true.
+
+
+Stuck? Get a hint
+64.
+At the bottom of the gameOver() function, set currentlyPlaying to false. You’ll use this value to make sure that additional doors can’t be clicked after the ChoreBot door is clicked.
+
+
+Stuck? Get a hint
+65.
+Now looking at the door element .onclick() functions, add to the current if statement a condition that checks whether currentlyPlaying returns true AND that the isClicked(door) function returns false.
+
+Open the hint to see the correct syntax for this if statement.
+
+
+Stuck? Get a hint
+66.
+Well done—you’ve made it so the game can’t be played once you’ve hit the losing game over condition and the game is now functioning as it should. It lets you know if you’ve opened all the doors to victory and it tells you if you’ve lost because you found the ChoreBot before all the doors were opened.
+
+There’s one problem though - the only way to reset the values for a new round is to refresh the page. Your next task is to turn your startButton into exactly that - a start button for a new round.
+
+Directly underneath the door element .onclick() functions, add a click handler function for the startButton element. Inside it, call the startRound() function (which hasn’t been written yet).
+
+
+Stuck? Get a hint
+67.
+The startRound() function not only has to start a new game; it also has to reset the values from the previous game.
+
+Create this new startRound() function after the .onclick() functions. startRound() should reset the following variables back to their original values:
+
+All doorImage.src values
+numClosedDoors variable
+startButton.innerHTML variable
+currentlyPlaying variable
+Examine the starting code, or open the hint for tips or resetting these orignally values.
+
+
+Stuck? Get a hint
+68.
+After all these variables are reset, call the randomChoreDoorGenerator() function at the bottom of the startRound() function.
+
+69.
+Now that the startRound() function exists, the randomChoreDoorGenerator() function at the bottom of the script.js needs to be replaced by the startRound() function so that the game’s variables are set to their original values when the game is initially loaded.
+
+70.
+Currently, the game can reset mid-round if the player clicks on the startRound button. This bug results in every doorImage.src becoming a closed door again before the winning or losing condition is reached.
+
+Wrap the code inside the startButton.onclick() function in an if statement where the condition checks if the currentlyPlaying variable is false so that a player cannot reset the game mid-round.
+
+Congratulations! You’ve successfully built a full interactive game utilizing your HTML, CSS, and JavaScript knowledge. Be proud of how far you’ve come.
