@@ -1,30 +1,35 @@
-let doorImage1 = document.getElementById('door1');
+// These never get re-assigned so we should use const instead of let.
+// Also I am moving these to the top so that that are out of the way and not distracting.
 const botDoorPath = "https://content.codecademy.com/projects/chore-door/images/robot.svg";
-let doorImage2 = document.getElementById('door2');
-let doorImage3 = document.getElementById('door3');
-let beachDoorPath = "https://content.codecademy.com/projects/chore-door/images/beach.svg";
-let spaceDoorPath = "https://content.codecademy.com/projects/chore-door/images/space.svg";
-let numClosedDoors = 3;
+const beachDoorPath = "https://content.codecademy.com/projects/chore-door/images/beach.svg";
+const spaceDoorPath = "https://content.codecademy.com/projects/chore-door/images/space.svg";
+const closedDoorPath = "https://content.codecademy.com/projects/chore-door/images/closed_door.svg";
+
+// Even though we are re-assigning the 'src' attribute of these later on
+// in the code, we never really actually re-assign the variables themselves.
+// Therefore let's use const instead of let for these.
+const doorImage1 = document.getElementById('door1');
+const doorImage2 = document.getElementById('door2');
+const doorImage3 = document.getElementById('door3');
+const startButton = document.getElementById('start');
+
 let openDoor1;
 let openDoor2;
 let openDoor3;
-let closedDoorPath = "https://content.codecademy.com/projects/chore-door/images/closed_door.svg";
-// using DOM method to assign start to the button id of 'start'
-let startButton = document.getElementById('start');
-// checks if game should still be running
-const currentlyPlaying = true;
+let numClosedDoors = 3;
 
-//losing function
+// This was breaking your code. Since the variable is re-assigned
+// later on, we should use let instead of const.
+let currentlyPlaying = true;
+
 const isBot = door => {
-if (door.src === botDoorPath){
+  if (door.src === botDoorPath) {
     return true;
   } else {
     return false;
   };
 };
 
-
-//function to check if a door has already been clicked
 const isClicked = door => {
   if (door.src === closedDoorPath) {
     return false;
@@ -32,81 +37,73 @@ const isClicked = door => {
     return true;
   };
 };
-//play door function
+
 const playDoor = door => {
-  numClosedDoors--
+  numClosedDoors--;
   if (numClosedDoors === 0) {
     gameOver('win');
   } else if (isBot(door)) {
     gameOver();
   };
-
 };
-// random generator for chore bot
+
 const randomChoreDoorGenerator = () => {
-let choreDoor = Math.floor(Math.random() * numClosedDoors);
-if (choreDoor === 0) {
- openDoor1 = botDoorPath;
- openDoor2 = beachDoorPath;
- openDoor3 = spaceDoorPath;
-} else if (choreDoor === 1) {
- openDoor2 = botDoorPath;
- openDoor3 = beachDoorPath;
- openDoor1 = spaceDoorPath;
-} else if (choreDoor === 2) {
-openDoor3 = botDoorPath;
-openDoor1 = beachDoorPath;
-openDoor2 = spaceDoorPath;
+  let choreDoor = Math.floor(Math.random() * numClosedDoors);
+  if (choreDoor === 0) {
+    openDoor1 = botDoorPath;
+    openDoor2 = beachDoorPath;
+    openDoor3 = spaceDoorPath;
+  } else if (choreDoor === 1) {
+    openDoor2 = botDoorPath;
+    openDoor3 = beachDoorPath;
+    openDoor1 = spaceDoorPath;
+  } else if (choreDoor === 2) {
+    openDoor3 = botDoorPath;
+    openDoor1 = beachDoorPath;
+    openDoor2 = spaceDoorPath;
+  }
 }
 
-}
-
-//on click events for each door
 doorImage1.onclick = () => {
-  if (currentlyPlaying && !isClicked(doorImage1)){
-  doorImage1.src = openDoor1;
-  playDoor(doorImage1);
+  if (currentlyPlaying && !isClicked(doorImage1)) {
+    doorImage1.src = openDoor1;
+    playDoor(doorImage1);
   }
 }
-
 doorImage2.onclick = () => {
-  if (currentlyPlaying && !isClicked(doorImage2)){
-  doorImage2.src = openDoor2;
-  playDoor(doorImage2);
+  if (currentlyPlaying && !isClicked(doorImage2)) {
+    doorImage2.src = openDoor2;
+    playDoor(doorImage2);
   }
 }
-
 doorImage3.onclick = () => {
   if (currentlyPlaying && !isClicked(doorImage3)) {
-  doorImage3.src = openDoor3;
-  playDoor(doorImage3);
+    doorImage3.src = openDoor3;
+    playDoor(doorImage3);
   }
 }
-//make start button refresh page
 startButton.onclick = () => {
   if (!currentlyPlaying) {
-  startRound();
+    startRound();
   }
 }
-
-// resets values to start round over
 
 const startRound = () => {
   numClosedDoors = 3;
-  doorImage1.src = closedDoorPath;
-  doorImage2.src = closedDoorPath;
-  doorImage3.src = closedDoorPath;
-  startButton.innerHTML = 'Good Luck!';
   currentlyPlaying = true;
+  startButton.innerHTML = 'Good Luck!';
+
+  // When assigning multiple things to the same value, you
+  // can actually do this, which is slightly neater.
+  doorImage1.src = doorImage2.src = doorImage3.src = closedDoorPath;
   randomChoreDoorGenerator();
 };
-//game over function
+
 const gameOver = (status) => {
   if (status === 'win') {
     startButton.innerHTML = 'You win! Play again?';
   } else {
     startButton.innerHTML = 'Game over! Play again?';
-    
   }
   currentlyPlaying = false;
 };
